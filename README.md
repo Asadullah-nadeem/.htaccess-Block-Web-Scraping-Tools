@@ -18,7 +18,7 @@ This `.htaccess` snippet is designed to block specific user agents commonly asso
      - apachebench
      - Any User-Agent containing "crawler", "spider", or "scanner".
 3. **Block Direct IP Access**:
-   - Ensures the website is only accessible via the domain name (e.g., `codeaxe.co.in`).
+   - Ensures the website is only accessible via the domain name (e.g., `yourwebsite.com`).
 4. **Protect `.htaccess`**:
    - Prevents unauthorized access to the `.htaccess` file itself.
 
@@ -44,8 +44,9 @@ This `.htaccess` snippet is designed to block specific user agents commonly asso
    RewriteCond %{HTTP_USER_AGENT} ^.*(crawler|spider|scanner).* [NC]
    RewriteRule .* - [F,L]
 
+   
    # Block direct IP access
-   RewriteCond %{HTTP_HOST} !^codeaxe\.co\.in [NC]
+   RewriteCond %{HTTP_HOST} !^yourwebsite\.com [NC]
    RewriteRule .* - [F,L]
 
    # Protect .htaccess file
